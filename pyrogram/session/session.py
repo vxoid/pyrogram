@@ -144,6 +144,7 @@ class Session:
                 raise e
             except (OSError, RPCError):
                 await self.stop()
+                raise e
             except Exception as e:
                 await self.stop()
                 raise e
